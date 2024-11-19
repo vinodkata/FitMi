@@ -18,7 +18,7 @@ export const fetchHealthRecords = async (userId) => {
 // Create a new health record
 export const createHealthRecord = async (record) => {
     try {
-        const response = await fetch(API_URL, {
+        const response = await fetch(`${API_URL}/${record.userId}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -64,9 +64,9 @@ export const updateHealthRecord = async (id, updatedRecord) => {
 };
 
 // Delete a health record
-export const deleteHealthRecord = async (id) => {
+export const deleteHealthRecord = async (id, record) => {
     try {
-        const response = await fetch(`${API_URL}/${id}`, {
+        const response = await fetch(`${API_URL}/${record.userId}/${ id }`, {
             method: "DELETE",
         });
         if (!response.ok) throw new Error("Failed to delete health record");

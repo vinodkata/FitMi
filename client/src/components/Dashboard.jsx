@@ -34,8 +34,8 @@ function Dashboard({ userId }) {
     };
 
     // Handle delete record
-    const handleDelete = async (id) => {
-        await deleteHealthRecord(id);
+    const handleDelete = async (id, deleRecord) => {
+        await deleteHealthRecord(id,deleRecord);
         setRecords(records.filter((record) => record._id !== id));
         setFilteredRecords(filteredRecords.filter((record) => record._id !== id));
     };
@@ -226,8 +226,8 @@ function Dashboard({ userId }) {
                                         className="bg-indigo-500 text-white px-3 py-1 rounded hover:bg-indigo-400 transition duration-300"
                                         onClick={() => handleView(record)}
                                     /></td><td><input type="button" value="Delete"
-                                        className="bg-red-600 text-white px-3 py-1 rounded ml-2 hover:bg-red-500 transition duration-300"
-                                        onClick={() => handleDelete(record._id)}
+                                            className="bg-red-600 text-white px-3 py-1 rounded ml-2 hover:bg-red-500 transition duration-300"
+                                            onClick={() => handleDelete(record._id, record)}
                                     /></td></tr></table>
 
 
