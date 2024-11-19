@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
+import authRoutes from './routes/authRoutes.js'; // Import the auth routes
 import healthRecordRoutes from "./routes/healthRecordRoutes.js";
 import swaggerUi from "swagger-ui-express";
 import swaggerJsDoc from "swagger-jsdoc";
@@ -47,6 +48,7 @@ app.use(express.json()); // JSON parser
 connectDB();
 
 // Routes
+app.use('/api', authRoutes);
 app.use("/api/health-records", healthRecordRoutes);
 
 // Home Route
