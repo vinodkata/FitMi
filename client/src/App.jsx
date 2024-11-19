@@ -76,7 +76,7 @@ const App = () => {
     );
     return (
         <UserProvider>
-            <GoogleOAuthProvider clientId="67842117185-0htpjcsjf1c5kpo9j208cig01nmlk1l8.apps.googleusercontent.com">
+            <GoogleOAuthProvider clientId="563022173018-r4q8qud52b6slhrb0msr3oljdma6itqb.apps.googleusercontent.com">
                 <div className="min-h-screen bg-gray-100 flex items-center justify-center">
                     <div className="container mx-auto p-4">
                         {user ? (
