@@ -1,11 +1,24 @@
 
 ---
 
-# Health Tracking App
+# FitMi
 
-A full-stack Health Tracking App built with the MERN (MongoDB, Express, React, Node.js) stack. This app allows users to log and track daily health metrics such as body temperature, blood pressure (systolic/diastolic), and heart rate. Users can create, view, update, and delete health records, while also utilizing features like searching and filtering through the records.
+A full-stack FitMi Tracking App built with the MERN (MongoDB, Express, React, Node.js) stack. This app allows users to log and track daily health metrics such as body temperature, blood pressure (systolic/diastolic), and heart rate. Users can create, view, update, and delete health records, while also utilizing features like searching and filtering through the records.
 
 ## Features
+
+- **Authentication API Features:**
+    The Authentication API now includes a registration feature with an improved UI, allowing users to input detailed personal information.
+
+    - User Registration:
+    The registration form allows new users to sign up by providing the following details:
+    Name: The user's full name.
+    Email: A valid email address for account setup.
+    Password: A secure password for account login.
+    Gender: Gender selection (Male/Female/Other).
+    Height (cm): The user's height in centimeters.
+    Weight (kg): The user's weight in kilograms.
+    These details are stored securely in the backend database and can be used to personalize health recommendations and metrics tracking in future updates
 
 - **Dashboard:**
   - Displays a list of all health records with metrics such as body temperature, blood pressure, and heart rate.
@@ -50,11 +63,16 @@ A full-stack Health Tracking App built with the MERN (MongoDB, Express, React, N
 - **Google API**: For user authentication via Gmail.
 
 ### API Endpoints:
-- **POST /health-records**: Create a new health record.
-- **GET /health-records**: Fetch all health records.
-- **GET /health-records/:id**: Fetch a specific health record by ID.
-- **PUT /health-records/:id**: Update a specific health record by ID.
-- **DELETE /health-records/:id**: Delete a specific health record by ID.
+  ## Authentication API: 
+  - **POST /api/register**: Register a new user.
+  - **POST /api/login**: Log in a user.
+  - **PUT /api/users/:id**: Update user information.
+  ## Health Records 
+  - **GET /api/health-records/:userId**:Retrieve a list of health records for a specific user.
+  - **POST /api/health-records/:userId**: Create a new health record for a specific user.
+  - **GET /api/health-records/:userId/:id**: Retrieve a health record by ID for a specific user.
+  - **PUT /api/health-records/:userId/:id**: Update a health record by ID for a specific user.
+  - **DELETE /api/health-records/:userId/:id**: Delete a health record by ID for a specific user.
 
 ## Getting Started
 
@@ -68,8 +86,8 @@ A full-stack Health Tracking App built with the MERN (MongoDB, Express, React, N
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/health-tracking-app.git
-cd health-tracking-app
+git clone https://github.com/vinodkata/FitMi.git
+cd FitMi
 ```
 
 2. Install dependencies for both the frontend and backend:
@@ -118,7 +136,6 @@ Make sure to update the frontend API URL in `client/src/services/api.js` to matc
 
 ## Future Enhancements
 
-- **User Authentication**: Allow users to create accounts and manage their own health records securely.
 - **Graphical Representation**: Add charts and graphs to visualize health data trends over time.
 - **Export Data**: Provide users with the ability to export their health records to CSV or PDF formats.
 
