@@ -16,9 +16,9 @@ const swaggerOptions = {
     swaggerDefinition: {
         openapi: "3.0.0", // OpenAPI version
         info: {
-            title: "Health Tracking API",
+            title: "FitMi API",
             version: "1.0.0",
-            description: "API documentation for the Health Tracking application",
+            description: "API documentation for the FitMi application",
         },
         servers: [
             {
