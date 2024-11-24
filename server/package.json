@@ -1,5 +1,5 @@
 {
-  "name": "server-health-tracking-app",
+  "name": "server-fitmi-app",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
